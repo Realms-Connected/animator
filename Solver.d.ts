@@ -2,9 +2,12 @@ import Animation from "./Animation";
 import Blend from "./Blend";
 import Rig from "./Rig";
 
-interface Solver 
+interface Solver
 {
-	solve: (rig: ReturnType<(typeof Rig)["create"]>, tracks: Map<ReturnType<(typeof Animation)["fromKeyframeSequence"]>, ReturnType<(typeof Blend)["blend"]>>) => void
+    solve: (
+        rig: ReturnType<(typeof Rig)["create"]>,
+        tracks: Map<ReturnType<(typeof Animation)["fromKeyframeSequence"]>, ReturnType<(typeof Blend)["blend"]>>,
+    ) => void;
 }
 
-declare const x: Solver
+declare const x: Solver;
