@@ -6,8 +6,10 @@ interface Solver
 {
     solve: (
         rig: ReturnType<(typeof Rig)["create"]>,
-        tracks: Map<ReturnType<(typeof Animation)["fromKeyframeSequence"]>, ReturnType<(typeof Blend)["blend"]>>,
+        tracks: Map<ReturnType<typeof Animation["fromKeyframeSequence"]>, Blend.BlendTrack>,
+        targetCharacterCFrame: CFrame
     ) => void;
 }
 
-declare const x: Solver;
+declare const Solver: Solver;
+export = Solver;

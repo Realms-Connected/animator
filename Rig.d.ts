@@ -3,8 +3,8 @@ interface Rig
     limbs: Record<number, { name: string, parent: string, c0: CFrame, c1: CFrame }>;
     transforms: Record<number, { position: Vector3, quatVec: Vector3, quatW: number, priority: number }>;
     output: {
-        root: string,
-        [key: string]: unknown,
+        root: CFrame,
+        [key: string]: CFrame,
     };
 }
 

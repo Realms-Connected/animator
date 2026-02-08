@@ -1,4 +1,4 @@
-interface Animation
+export interface BaseAnimation
 {
     /*
      * Add an event.
@@ -8,15 +8,15 @@ interface Animation
      * Sort registered events by time.
      */
     sortEvents(): void;
+    
+    length: number;
+    keyframeTimes: Array<unknown>;
+    poses: Array<unknown>;
+    holes: Array<unknown>;
+    events: Array<unknown>;
 }
 
-declare interface AnimationConstructor
-{
-    /*
-     * Build animation from Roblox KeyframeSequence
-     */
-    fromKeyframeSequence: (sequence: KeyframeSequence) => Animation;
-}
-
-declare const Animation: AnimationConstructor;
-export = Animation;
+/*
+ * Build animation from Roblox KeyframeSequence
+ */
+export const fromKeyframeSequence: (sequence: KeyframeSequence) => BaseAnimation;
